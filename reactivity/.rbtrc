@@ -1,12 +1,10 @@
-# Generate 'nodejs' code from our '.proto' files in 'api/'.
 protoc --nodejs=api/
+protoc --react=api/
 
-# Find '.proto' files in 'api/'.
 protoc api/
 
-# Add extensions so that we can run the application with `node` in tests.
-# See .tests/test.sh
 protoc --nodejs-extensions
+protoc --react-extensions
 
 dev run --name=reactive-reboot
 

@@ -7,8 +7,8 @@ const initialize = async (context) => {
   const b = B.ref("B");
   const c = C.ref("C");
   await a.idempotently().updateAState(context, { aState: "A" });
-  await b.idempotently().updateAState(context, { aState: "B" });
-  await c.idempotently().updateAState(context, { aState: "C" });
+  await b.idempotently().updateBState(context, { bState: "B" });
+  await c.idempotently().updateCState(context, { cState: "C" });
 };
 
 new Application({

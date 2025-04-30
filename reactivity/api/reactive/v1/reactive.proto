@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package user.v1;
+package reactive.v1;
 
 import "rbt/v1alpha1/options.proto";
 import "google/protobuf/empty.proto";
