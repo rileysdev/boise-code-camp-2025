@@ -1,0 +1,9 @@
+# Directory created from using the 'rbt' CLI tool.
+.rbt/
+
+# Any virtualenv directories.
+.*-venv/
+
+node_modules/
+
+dist/

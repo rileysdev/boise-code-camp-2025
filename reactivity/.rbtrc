@@ -1,0 +1,17 @@
+# Generate 'nodejs' code from our '.proto' files in 'api/'.
+protoc --nodejs=api/
+
+# Find '.proto' files in 'api/'.
+protoc api/
+
+# Add extensions so that we can run the application with `node` in tests.
+# See .tests/test.sh
+protoc --nodejs-extensions
+
+dev run --name=reactive-reboot
+
+dev run --nodejs
+
+dev run --application=backend/main.ts
+
+dev expunge --name=reactive-reboot

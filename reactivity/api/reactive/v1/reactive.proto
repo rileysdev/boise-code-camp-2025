@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package user.v1;
+
+import "rbt/v1alpha1/options.proto";
+import "google/protobuf/empty.proto";
+
+////////////////////////////////////////////////////////////////////////
+
+message A {
+  option (rbt.v1alpha1.state) = {
+  };
+  string a_state = 1;
+}
+
+service AMethods {
+  rpc GetAState(google.protobuf.Empty) returns (GetResponse) {
+    option (rbt.v1alpha1.method).reader = {
+    };
+  }
+
+  rpc UpdateAState(UpdateAStateRequest) returns (google.protobuf.Empty) {
+    option (rbt.v1alpha1.method).writer = {
+    };
+  }
+}
+
+message B {
+  option (rbt.v1alpha1.state) = {
+  };
+  string b_state = 1;
+}
+
+service BMethods {
+  rpc GetBState(google.protobuf.Empty) returns (GetResponse) {
+    option (rbt.v1alpha1.method).reader = {
+    };
+  }
+
+  rpc UpdateBState(UpdateBStateResponse) returns (google.protobuf.Empty) {
+    option (rbt.v1alpha1.method).writer = {
+    };
+  }
+}
+
+message C {
+  option (rbt.v1alpha1.state) = {
+  };
+  string c_state = 1;
+}
+
+service CMethods {
+  rpc GetCState(google.protobuf.Empty) returns (GetResponse) {
+    option (rbt.v1alpha1.method).reader = {
+    };
+  }
+
+  rpc UpdateCState(UpdateCStateResponse) returns (google.protobuf.Empty) {
+    option (rbt.v1alpha1.method).writer = {
+    };
+  }
+}
+
+message GetResponse {
+  string combined_response  = 1;
+}
+
+message UpdateAStateRequest {
+  string a_state = 1;
+}
+
+message UpdateBStateResponse {
+  string b_state = 1;
+}
+
+message UpdateCStateResponse {
+  string c_state = 1;
+}
