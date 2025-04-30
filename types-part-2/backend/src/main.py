@@ -16,7 +16,7 @@ async def initialize(context: ExternalContext):
     # Implicitly construct state machine upon first write.
     await user.idempotently().Set(
         context,
-        id=1,
+        user_id="1",
         name='Alice Wonderland',
         email='alice@example.com'
     )

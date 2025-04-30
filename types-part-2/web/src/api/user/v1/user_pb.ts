@@ -11,9 +11,9 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export class User extends Message<User> {
   /**
-   * @generated from field: int32 id = 1;
+   * @generated from field: string user_id = 1;
    */
-  id = 0;
+  userId = "";
 
   /**
    * @generated from field: string name = 2;
@@ -33,7 +33,7 @@ export class User extends Message<User> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "user.v1.User";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
@@ -91,9 +91,9 @@ export class GetRequest extends Message<GetRequest> {
  */
 export class GetResponse extends Message<GetResponse> {
   /**
-   * @generated from field: int32 id = 1;
+   * @generated from field: string user_id = 1;
    */
-  id = 0;
+  userId = "";
 
   /**
    * @generated from field: string name = 2;
@@ -113,7 +113,7 @@ export class GetResponse extends Message<GetResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "user.v1.GetResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
@@ -140,12 +140,17 @@ export class GetResponse extends Message<GetResponse> {
  */
 export class SetRequest extends Message<SetRequest> {
   /**
-   * @generated from field: string name = 1;
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string name = 2;
    */
   name = "";
 
   /**
-   * @generated from field: string email = 2;
+   * @generated from field: string email = 3;
    */
   email = "";
 
@@ -157,8 +162,9 @@ export class SetRequest extends Message<SetRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "user.v1.SetRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRequest {

@@ -20,16 +20,19 @@ class UserServicer(User.Servicer):
         state: User.State,
         request: GetRequest,
     ) -> GetResponse:
-        return GetResponse(id=state.id, name=state.name, email=state.email)
+        return GetResponse(user_id=state.user_id, name=state.name, email=state.email)
         
     async def Set(
         self,
         context: WriterContext,
-        state: Hello.State,
+        state: User.State,
         request: SetRequest,
     ) -> SetResponse:
-        state.id = request.id
-        state.name = request.name
-        state.email = request.email
+        if request.user_id:
+            state.user_id = request.user_id
+        if request.name:
+            state.name = request.name
+        if request.email:
+            state.email = request.email
 
         return SetResponse()

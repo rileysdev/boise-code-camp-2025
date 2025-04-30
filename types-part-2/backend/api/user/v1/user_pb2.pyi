@@ -20,20 +20,20 @@ class User(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
+    USER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     EMAIL_FIELD_NUMBER: builtins.int
-    id: builtins.int
+    user_id: builtins.str
     name: builtins.str
     email: builtins.str
     def __init__(
         self,
         *,
-        id: builtins.int = ...,
+        user_id: builtins.str = ...,
         name: builtins.str = ...,
         email: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["email", b"email", "id", b"id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["email", b"email", "name", b"name", "user_id", b"user_id"]) -> None: ...
 
 global___User = User
 
@@ -51,20 +51,20 @@ global___GetRequest = GetRequest
 class GetResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
+    USER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     EMAIL_FIELD_NUMBER: builtins.int
-    id: builtins.int
+    user_id: builtins.str
     name: builtins.str
     email: builtins.str
     def __init__(
         self,
         *,
-        id: builtins.int = ...,
+        user_id: builtins.str = ...,
         name: builtins.str = ...,
         email: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["email", b"email", "id", b"id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["email", b"email", "name", b"name", "user_id", b"user_id"]) -> None: ...
 
 global___GetResponse = GetResponse
 
@@ -72,17 +72,20 @@ global___GetResponse = GetResponse
 class SetRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    USER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     EMAIL_FIELD_NUMBER: builtins.int
+    user_id: builtins.str
     name: builtins.str
     email: builtins.str
     def __init__(
         self,
         *,
+        user_id: builtins.str = ...,
         name: builtins.str = ...,
         email: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["email", b"email", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["email", b"email", "name", b"name", "user_id", b"user_id"]) -> None: ...
 
 global___SetRequest = SetRequest
 

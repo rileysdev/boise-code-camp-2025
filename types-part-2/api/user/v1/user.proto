@@ -9,7 +9,7 @@ import "rbt/v1alpha1/options.proto";
 message User {
   option (rbt.v1alpha1.state) = {
   };
-  int32 id = 1;
+  string user_id = 1;
   string name = 2;
   string email = 3;
 }
@@ -29,14 +29,15 @@ service UserMethods {
 message GetRequest {}
 
 message GetResponse {
-  int32 id = 1;
+  string user_id = 1;
   string name = 2;
   string email = 3;
 }
 
 message SetRequest {
-  string name = 1;
-  string email = 2;
+  string user_id = 1;
+  string name = 2;
+  string email = 3;
 }
 
 message SetResponse {}

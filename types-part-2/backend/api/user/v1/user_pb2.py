@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from rbt.v1alpha1 import options_pb2 as rbt_dot_v1alpha1_dot_options__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12user/v1/user.proto\x12\x07user.v1\x1a\x1arbt/v1alpha1/options.proto\"5\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t:\x04\x82\xb5\x18\x00\"\x0c\n\nGetRequest\"6\n\x0bGetResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\")\n\nSetRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"\r\n\x0bSetResponse2\x81\x01\n\x0bUserMethods\x12\x38\n\x03Get\x12\x13.user.v1.GetRequest\x1a\x14.user.v1.GetResponse\"\x06\x82\xb5\x18\x02\n\x00\x12\x38\n\x03Set\x12\x13.user.v1.SetRequest\x1a\x14.user.v1.SetResponse\"\x06\x82\xb5\x18\x02\x12\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12user/v1/user.proto\x12\x07user.v1\x1a\x1arbt/v1alpha1/options.proto\":\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t:\x04\x82\xb5\x18\x00\"\x0c\n\nGetRequest\";\n\x0bGetResponse\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\":\n\nSetRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"\r\n\x0bSetResponse2\x81\x01\n\x0bUserMethods\x12\x38\n\x03Get\x12\x13.user.v1.GetRequest\x1a\x14.user.v1.GetResponse\"\x06\x82\xb5\x18\x02\n\x00\x12\x38\n\x03Set\x12\x13.user.v1.SetRequest\x1a\x14.user.v1.SetResponse\"\x06\x82\xb5\x18\x02\x12\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,15 +29,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERMETHODS'].methods_by_name['Set']._loaded_options = None
   _globals['_USERMETHODS'].methods_by_name['Set']._serialized_options = b'\202\265\030\002\022\000'
   _globals['_USER']._serialized_start=59
-  _globals['_USER']._serialized_end=112
-  _globals['_GETREQUEST']._serialized_start=114
-  _globals['_GETREQUEST']._serialized_end=126
-  _globals['_GETRESPONSE']._serialized_start=128
-  _globals['_GETRESPONSE']._serialized_end=182
-  _globals['_SETREQUEST']._serialized_start=184
-  _globals['_SETREQUEST']._serialized_end=225
-  _globals['_SETRESPONSE']._serialized_start=227
-  _globals['_SETRESPONSE']._serialized_end=240
-  _globals['_USERMETHODS']._serialized_start=243
-  _globals['_USERMETHODS']._serialized_end=372
+  _globals['_USER']._serialized_end=117
+  _globals['_GETREQUEST']._serialized_start=119
+  _globals['_GETREQUEST']._serialized_end=131
+  _globals['_GETRESPONSE']._serialized_start=133
+  _globals['_GETRESPONSE']._serialized_end=192
+  _globals['_SETREQUEST']._serialized_start=194
+  _globals['_SETREQUEST']._serialized_end=252
+  _globals['_SETRESPONSE']._serialized_start=254
+  _globals['_SETRESPONSE']._serialized_end=267
+  _globals['_USERMETHODS']._serialized_start=270
+  _globals['_USERMETHODS']._serialized_end=399
 # @@protoc_insertion_point(module_scope)

@@ -14,7 +14,7 @@ from __future__ import annotations as IMPORT_future_annotations
 # may be invalid (broken) if the generated code is mismatched with the installed
 # libraries.
 import reboot.versioning as IMPORT_reboot_versioning
-IMPORT_reboot_versioning.check_generated_code_compatible("0.25.2")
+IMPORT_reboot_versioning.check_generated_code_compatible("0.25.1")
 
 # ATTENTION: no types in this file should be imported with their unqualified
 #            name (e.g. `from typing import Any`). That would cause clashes
@@ -307,7 +307,7 @@ class UserServicerMiddleware(IMPORT_reboot_aio_internals_middleware.Middleware):
         else:
             logger.warning(
                 "Got a React query request with an invalid method name: "
-                f"Method '{method}' is invalid for servicer User."
+                "Method '{method}' is invalid for servicer User."
                 "\n"
                 "Do you have a browser tab open for an older version "
                 "of this application, or for a different application all together?"
@@ -396,7 +396,7 @@ class UserServicerMiddleware(IMPORT_reboot_aio_internals_middleware.Middleware):
         else:
             logger.warning(
                 "Got a react mutate request with an invalid method name: "
-                f"Method '{method}' is invalid for servicer User."
+                "Method '{method}' is invalid for servicer User."
                 "\n"
                 "Do you have an old browser tab still open for an older version "
                 "of this application, or a different application all together?"
@@ -3138,6 +3138,7 @@ class User:
                 __context__: IMPORT_reboot_aio_contexts.TransactionContext | IMPORT_reboot_aio_contexts.WorkflowContext | IMPORT_reboot_aio_external.ExternalContext,
                 __options__: IMPORT_reboot_aio_call.Options = IMPORT_reboot_aio_call.Options(),
                 *,
+                user_id: IMPORT_typing.Optional[str] = None,
                 name: IMPORT_typing.Optional[str] = None,
                 email: IMPORT_typing.Optional[str] = None,
             ) -> user.v1.user_pb2.SetResponse:
@@ -3162,6 +3163,7 @@ class User:
                 return await __this__._weak_reference.Set(
                     __context__,
                     __options__,
+                    user_id=user_id,
                     name=name,
                     email=email,
                 )
@@ -3267,6 +3269,7 @@ class User:
                 __context__: IMPORT_reboot_aio_contexts.TransactionContext,
                 __options__: IMPORT_typing.Optional[IMPORT_reboot_aio_call.Options] = None,
                 *,
+                user_id: IMPORT_typing.Optional[str] = None,
                 name: IMPORT_typing.Optional[str] = None,
                 email: IMPORT_typing.Optional[str] = None,
             ) -> IMPORT_rbt_v1alpha1.tasks_pb2.TaskId:
@@ -3276,6 +3279,15 @@ class User:
                 IMPORT_reboot_aio_types.assert_not_request_type(__options__, request_type=user.v1.user_pb2.SetRequest)
                 IMPORT_reboot_aio_types.assert_type(__context__, [IMPORT_reboot_aio_contexts.TransactionContext])
 
+                if user_id is not None and not isinstance(
+                    user_id,
+                    str,
+                ):
+                    raise TypeError(
+                        f"Can not construct protobuf message of type "
+                        f"'user.v1.user_pb2.SetRequest': field 'user_id' is not "
+                        f"of required type 'str'"
+                    )
                 if name is not None and not isinstance(
                     name,
                     str,
@@ -3298,6 +3310,7 @@ class User:
                 # `IMPORT_google_protobuf_message.Message` constructor arguments are
                 # always non-None, when in reality they are optional.
                 __request__ = user.v1.user_pb2.SetRequest(
+                    user_id=user_id,  # type: ignore[arg-type]
                     name=name,  # type: ignore[arg-type]
                     email=email,  # type: ignore[arg-type]
                 )
@@ -3432,6 +3445,7 @@ class User:
                 __context__: IMPORT_reboot_aio_contexts.WriterContext | IMPORT_reboot_aio_contexts.TransactionContext,
                 __options__: IMPORT_typing.Optional[IMPORT_reboot_aio_call.Options] = None,
                 *,
+                user_id: IMPORT_typing.Optional[str] = None,
                 name: IMPORT_typing.Optional[str] = None,
                 email: IMPORT_typing.Optional[str] = None,
             ) -> IMPORT_rbt_v1alpha1.tasks_pb2.TaskId:
@@ -3444,6 +3458,15 @@ class User:
                 IMPORT_reboot_aio_types.assert_not_request_type(__context__, request_type=user.v1.user_pb2.SetRequest)
                 IMPORT_reboot_aio_types.assert_not_request_type(__options__, request_type=user.v1.user_pb2.SetRequest)
 
+                if user_id is not None and not isinstance(
+                    user_id,
+                    str,
+                ):
+                    raise TypeError(
+                        f"Can not construct protobuf message of type "
+                        f"'user.v1.user_pb2.SetRequest': field 'user_id' is not "
+                        f"of required type 'str'"
+                    )
                 if name is not None and not isinstance(
                     name,
                     str,
@@ -3466,6 +3489,7 @@ class User:
                 # `google.protobuf.message.Message` constructor arguments are
                 # always non-None, when in reality they are optional.
                 __request__ = user.v1.user_pb2.SetRequest(
+                    user_id=user_id,  # type: ignore[arg-type]
                     name=name,  # type: ignore[arg-type]
                     email=email,  # type: ignore[arg-type]
                 )
@@ -3603,6 +3627,7 @@ class User:
                 __context__: IMPORT_reboot_aio_contexts.WorkflowContext | IMPORT_reboot_aio_external.ExternalContext,
                 __options__: IMPORT_typing.Optional[IMPORT_reboot_aio_call.Options] = None,
                 *,
+                user_id: IMPORT_typing.Optional[str] = None,
                 name: IMPORT_typing.Optional[str] = None,
                 email: IMPORT_typing.Optional[str] = None,
             ) -> User.SetTask:
@@ -3612,6 +3637,15 @@ class User:
                 IMPORT_reboot_aio_types.assert_not_request_type(__options__, request_type=user.v1.user_pb2.SetRequest)
                 IMPORT_reboot_aio_types.assert_type(__context__, [IMPORT_reboot_aio_contexts.WorkflowContext, IMPORT_reboot_aio_external.ExternalContext])
 
+                if user_id is not None and not isinstance(
+                    user_id,
+                    str,
+                ):
+                    raise TypeError(
+                        f"Can not construct protobuf message of type "
+                        f"'user.v1.user_pb2.SetRequest': field 'user_id' is not "
+                        f"of required type 'str'"
+                    )
                 if name is not None and not isinstance(
                     name,
                     str,
@@ -3634,6 +3668,7 @@ class User:
                 # `IMPORT_google_protobuf_message.Message` constructor arguments are
                 # always non-None, when in reality they are optional.
                 __request__ = user.v1.user_pb2.SetRequest(
+                    user_id=user_id,  # type: ignore[arg-type]
                     name=name,  # type: ignore[arg-type]
                     email=email,  # type: ignore[arg-type]
                 )
@@ -3714,6 +3749,7 @@ class User:
             __context__: IMPORT_reboot_aio_contexts.TransactionContext | IMPORT_reboot_aio_contexts.WorkflowContext | IMPORT_reboot_aio_external.ExternalContext,
             __options__: IMPORT_typing.Optional[IMPORT_reboot_aio_call.Options] = None,
             *,
+            user_id: IMPORT_typing.Optional[str] = None,
             name: IMPORT_typing.Optional[str] = None,
             email: IMPORT_typing.Optional[str] = None,
         ) -> user.v1.user_pb2.SetResponse:
@@ -3722,6 +3758,15 @@ class User:
             IMPORT_reboot_aio_types.assert_not_request_type(__context__, request_type=user.v1.user_pb2.SetRequest)
             IMPORT_reboot_aio_types.assert_not_request_type(__options__, request_type=user.v1.user_pb2.SetRequest)
 
+            if user_id is not None and not isinstance(
+                user_id,
+                str,
+            ):
+                raise TypeError(
+                    f"Can not construct protobuf message of type "
+                    f"'user.v1.user_pb2.SetRequest': field 'user_id' is not "
+                    f"of required type 'str'"
+                )
             if name is not None and not isinstance(
                 name,
                 str,
@@ -3744,6 +3789,7 @@ class User:
             # `google.protobuf.message.Message` constructor arguments are
             # always non-None, when in reality they are optional.
             __request__ = user.v1.user_pb2.SetRequest(
+                user_id=user_id,  # type: ignore[arg-type]
                 name=name,  # type: ignore[arg-type]
                 email=email,  # type: ignore[arg-type]
             )
