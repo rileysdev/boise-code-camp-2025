@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package user.v1;
+
+import "rbt/v1alpha1/options.proto";
+
+////////////////////////////////////////////////////////////////////////
+
+message User {
+  option (rbt.v1alpha1.state) = {
+  };
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+service UserMethods {
+  rpc Get(GetRequest) returns (GetResponse) {
+    option (rbt.v1alpha1.method).reader = {
+    };
+  }
+
+  rpc Set(SetRequest) returns (SetResponse) {
+    option (rbt.v1alpha1.method).writer = {
+    };
+  }
+}
+
+message GetRequest {}
+
+message GetResponse {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message SetRequest {
+  string name = 1;
+  string email = 2;
+}
+
+message SetResponse {}

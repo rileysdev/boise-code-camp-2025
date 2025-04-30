@@ -1,0 +1,13 @@
+{
+    "name": "api", 
+    "version": "1.0.0",
+    "main": "types.ts", 
+    "types": "types.ts", 
+    "private": true, 
+    "scripts": {
+        "build": "echo 'No build needed for types in this simple example, but add tsc here if needed.'"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0" 
+    }
+}
