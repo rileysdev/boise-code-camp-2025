@@ -29,8 +29,7 @@ function App() {
     };
 
     fetchUser();
-  }, []); // Empty dependency array means this runs once on mount
-
+  }, []);
   if (loading) {
     return <div>Loading user...</div>;
   }
@@ -46,8 +45,7 @@ function App() {
         {user ? (
           <div>
             <h2>User Info:</h2>
-            {/* Accessing properties, type-checked by TypeScript */}
-            <p>ID: {user.id}</p>
+            <p>ID: {user.userId}</p>
             <p>Name: {user.name}</p>
             <p>Email: {user.email}</p>
           </div>

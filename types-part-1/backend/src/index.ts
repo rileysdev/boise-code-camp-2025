@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Simple in-memory data conforming to the User type
 const sampleUser: User = {
-  id: 1,
+  userId: 1,
   name: "Alice Wonderland",
   email: "alice@example.com",
 };
@@ -20,7 +20,7 @@ const sampleUser: User = {
 app.get("/api/user/:id", (req, res) => {
   const userId = parseInt(req.params.id, 10);
 
-  if (userId === sampleUser.id) {
+  if (userId === sampleUser.userId) {
     // The sampleUser object is type-checked against the User interface
     res.json(sampleUser);
   } else {

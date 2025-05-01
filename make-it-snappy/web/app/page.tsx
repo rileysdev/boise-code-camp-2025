@@ -3,7 +3,6 @@ import { Counter } from "../../api/counter/v1/counter_rbt";
 import { COUNTER_IDS } from "../../constants";
 import TakeableCounter from "./TakeableCounter";
 
-console.log("hllo", process.env.NEXT_PUBLIC_ENDPOINT);
 export default async function Home() {
   const context = new ExternalContext({
     name: "react server context",
